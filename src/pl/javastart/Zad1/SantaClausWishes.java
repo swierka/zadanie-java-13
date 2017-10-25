@@ -14,13 +14,13 @@ public class SantaClausWishes extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String textarea = request.getParameter("textarea");
 
-        TextStats textStats = new TextStats();
-        textStats.countSigns(textarea);
-
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
+
         PrintWriter writer = response.getWriter();
-        writer.println("Gratulacje! Twoje życzenia zostały wysłane do Swiętego Mikołaja!</br>");
+        TextStats textStats = new TextStats();
+        writer.println(textarea+"</br>");
+        writer.println("Gratulacje! Powyzsze życzenia zostały wysłane do Swiętego Mikołaja!</br>");
         writer.println("</br>");
         writer.println("Poniżej krótka statystyka: </br>");
         writer.println("Całkowita liczba znaków to: "+textStats.countSigns(textarea)+".</br>");

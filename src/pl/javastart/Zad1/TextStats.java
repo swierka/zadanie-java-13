@@ -1,7 +1,6 @@
 package pl.javastart.Zad1;
 
 public class TextStats {
-    String text;
 
     //liczenie znakow
     int countSigns(String text) {
